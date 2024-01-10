@@ -1,0 +1,57 @@
+body {
+    background-color: #f8fdfc;
+    --color-theme-1: #626CB1;
+    --color-theme-1-highlight: #393B75;
+    --color-decor-1: #ef9ead;
+    --color-decor-2: #dacceb;
+    --color-decor-3: #c3d7f8;
+    --color-text-1: #000;
+    --color-text-link-1: #0777cb;
+    --color-text-link-1-overshadow: #0095b9;
+    --color-background-1: #fff;
+    --color-background-1-overshadow: #f4f5f4;
+    --color-background-2: #c9f3ff;
+    --color-background-2-highlight: #91d4f8;
+    --color-green-1: #1cb371;
+    --color-red-1: #ff4d4f;
+}
+
+body {
+    font-family: Noto sans, Microsoft YaHei, Arial, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, sans-serif;
+}
+
+main {
+    margin: 0 0;
+}
+
+@font-face {
+    font-family: "Stelpolvo Sans";
+    src: local("Stelpolvo Sans"),
+        url("/fonts/StelpolvoSans-Regula.woff2") format("woff2"),
+        url("/fonts/StelpolvoSans-Regula.woff") format("woff"),
+        url("/fonts/StelpolvoSans-Regula.ttf") format("truetype");
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        margin: 0% 5%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    main {
+        margin: 0% 8%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    main {
+        margin: 0% 15%;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    main {
+        margin: 0% 20%;
+    }
+}
