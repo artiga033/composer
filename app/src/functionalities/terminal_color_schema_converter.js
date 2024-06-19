@@ -184,8 +184,59 @@ class KonsoleConverter {
     }
 }
 
+class KittyConverter {
+    keys = [
+        "background",
+        "foreground",
+        "cursor",
+        "cursor_text_color",
+        "selection_background",
+        "selection_foreground",
+        "color0",
+        "color1",
+        "color2",
+        "color3",
+        "color4",
+        "color5",
+        "color6",
+        "color7",
+        "color8",
+        "color9",
+        "color10",
+        "color11",
+        "color12",
+        "color13",
+        "color14",
+        "color15",
+    ];
+    // eslint-disable-next-line no-unused-vars
+    load(schema_kitty) {
+        throw new Error("Not implemented");
+    }
+    // eslint-disable-next-line no-unused-vars
+    dump(schema) {
+        let schema_kitty = "";
+        for (const i in this.keys) {
+            const name = this.keys[i];
+            const symbol = SchemaSymbols[i];
+            if (name) {
+                if (!schema[symbol]) {
+                    console.log(
+                        `Dumping Kitty Schema, property \`${name}\` is not found.`
+                    );
+                    continue;
+                }
+                schema_kitty += `${name}${" ".repeat(24 - name.length)}${schema[
+                    symbol
+                ].toHex()}\n`;
+            }
+        }
+        return schema_kitty;
+    }
+}
+
 /**
- * @typedef {"Windows Terminal"|"Konsole"} TerminalType
+ * @typedef {"Windows Terminal"|"Konsole"|"Kitty"} TerminalType
  */
 export class Converter {
     /**
@@ -194,6 +245,7 @@ export class Converter {
     static converters = {
         "Windows Terminal": new WindowsTerminalConverter(),
         Konsole: new KonsoleConverter(),
+        Kitty: new KittyConverter(),
     };
     /**
      *
